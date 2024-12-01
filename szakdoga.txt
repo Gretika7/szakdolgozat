@@ -3,7 +3,7 @@ saját logó
 #3c6d16 zöldből halványodó oldal
 NAV bar // jelekkel
 keresőmotor
-oldalt nyíló RÓLunk fül
+oldalt nyíló Rólunk fül
 LICENSE alulra
 játék kategorizálás(bővítünk)
 platforms
