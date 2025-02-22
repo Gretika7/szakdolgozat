@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home,About,Cart,Login_or_Registration, NotFound } from "./pages/router.js";
 import NavBar from "./components/NavBar.jsx";
+import Footer from "./components/Footer.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "./styles/main.css";
 
 export default () => {
     return (
@@ -17,7 +18,7 @@ export default () => {
                 {/*Ide a többi oldalt*/}
                 <Route path="*" element={<NotFound></NotFound>}></Route>
             </Routes>
-            {/*Footer*/}
+            <Footer></Footer>
         </Router>
     );
 }
