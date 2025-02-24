@@ -7,6 +7,7 @@ export default () => {
     return (
         <Container>
             <Row>
+                <h1 className="text-center mt-2">Főoldal</h1>
                 <Col xs={12} md={3}>
                     <Card 
                         title={"Fortnite"}

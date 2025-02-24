@@ -9,5 +9,26 @@ h1,h2,h3,h4,h5,.title {
     font-weight: 400;
     font-style: normal;
 }
+.rajta {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+.rajta:hover {
+    background-color: white;   
+}
+.rajta:hover > h2{
+    background: linear-gradient(to right, #394fb4, #ad4685); 
+    -webkit-background-clip: text;
+    background-clip: text; 
+    color: transparent;
+}
+.rajta:hover button{
+    background: linear-gradient(to right, #394fb4, #ad4685); 
+}
+.rajta:hover .input {
+    background-color: #3e2246;
+  }
 
-  
+.rajta:hover .text,p{
+    color:white;
+  }

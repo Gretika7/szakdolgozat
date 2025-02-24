@@ -1,50 +1,91 @@
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Button, Form, FloatingLabel} from "react-bootstrap";
 
 export default () => {
     return (
         <Container>
             <Row>
-                <Col>
-                    <h2>Login</h2> 
-                            <Form.Label>Felhasználónév</Form.Label>
-                            <Form.Control
-                                type="text"
-                                value=""
-                                placeholder="Enter your username"
-                            />
-                            <Form.Label>Jelszó</Form.Label>
-                            <Form.Control
-                                type="password"
-                                value=""
-                                placeholder="Enter your password"
-                            />
-                        <Button variant="primary" type="submit">
-                            Login
-                        </Button>
+                <Col xs={12} md={6} className="rajta" style={{paddingBottom:"100px"}}>
+                    <h2 className="text-center pt-5">Bejelentkezés</h2> 
+                    <Form>
+                        <FloatingLabel 
+                            controlId="floatingInput"
+                            label="Felhasználónév"
+                            className="mb-3 text"
+                        >
+                        <Form.Control className="input" 
+                            type="text" 
+                            placeholder="Felhasználónév" 
+                        />
+                        </FloatingLabel>
+                        <FloatingLabel 
+                            className="text"
+                            controlId="floatingPassword" 
+                            label="Jelszó">
+                        <Form.Control className="input"
+                            type="password" 
+                            placeholder="Jelszó" 
+                        />
+                        </FloatingLabel>
+                    <Button className="mt-3 d-flex justify-content-center mx-auto " variant="light">
+                        Bejelentkezés
+                    </Button>
+                    </Form>
                 </Col>
-                <Col>
-                    <h2>Regisztráció</h2> 
-                            <Form.Label>Felhasználónév</Form.Label>
-                            <Form.Control
-                                type="text"
-                                value=""
-                                placeholder="Enter your username"
-                            />
-                              <Form.Label>E-mail</Form.Label>
-                            <Form.Control
-                                type="text"
-                                value=""
-                                placeholder="Enter your username"
-                            />
-                            <Form.Label>Jelszó</Form.Label>
-                            <Form.Control
-                                type="password"
-                                value=""
-                                placeholder="Enter your password"
-                            />
-                        <Button style={{color:""}} type="submit">
-                            Login
-                        </Button>
+
+                <Col xs={12} md={6} className="rajta" style={{paddingBottom:"100px"}}>
+                    <h2  className="text-center pt-5">Regisztráció</h2> 
+                        <Form>
+                        <FloatingLabel
+                            controlId="floatingInput"
+                            label="Felhasználónév"
+                            className="mb-3 text"
+                        >
+                        <Form.Control className="input" 
+                            type="text" 
+                            placeholder="Felhasználónév" 
+                        />
+                        </FloatingLabel>
+                        <FloatingLabel
+                            controlId="floatingInput"
+                            label="Email-cím"
+                            className="mb-3 text"
+                        >
+                        <Form.Control className="input"
+                            type="email" 
+                            placeholder="Email-cím" 
+                        />
+                        </FloatingLabel>
+
+                        <Row>
+                            <Col>
+                            <FloatingLabel 
+                             className="text"
+                            controlId="floatingPassword" 
+                            label="Jelszó">
+                        <Form.Control className="input"
+                            type="password" 
+                            placeholder="Jelszó" 
+                        />
+                        </FloatingLabel>
+                            </Col>
+
+                            <Col>
+                            <FloatingLabel
+                            className="text"
+                            controlId="floatingPassword" 
+                            label ="Jelszó újra">
+                        <Form.Control className="input"
+                            type="password" 
+                            placeholder="Jelszó újra" 
+                        />
+                        </FloatingLabel>
+                            </Col>
+                        </Row>
+
+                    <Button className="mt-3 d-flex justify-content-center mx-auto" variant="light">
+                            Regisztráció
+                    </Button>
+                    </Form>    
                 </Col>
             </Row>
         </Container>

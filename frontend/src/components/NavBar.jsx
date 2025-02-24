@@ -10,8 +10,9 @@ export default () => {
             <Container>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
+                        <Nav.Link as={Link} to="/" style={{color:"white"}}>Főoldal</Nav.Link>
                         <Nav.Link as={Link} to="/about" style={{color:"white"}}>Rólunk</Nav.Link>
-                        <Nav.Link as={Link} to="/cart" style={{color:"white"}}>Kosár</Nav.Link>
+                        {/*<Nav.Link as={Link} to="/cart" style={{color:"white"}}>Kosár</Nav.Link>*/}
                         <Nav.Link as={Link} to="/login_or_registration" style={{color:"white"}}>Bejelentkezés/Regisztráció</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
