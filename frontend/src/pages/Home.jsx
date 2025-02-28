@@ -1,6 +1,5 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import Card from "../components/Card";
-import ReactPlayer from 'react-player';
 import ChangeCard from "../components/ChangeCard";
 
 export default () => {
@@ -46,15 +45,7 @@ export default () => {
                         </Card>
                 </Col>
                 <Col xs={12} md={9} className='mt-4 mb-4'>
-                     <ReactPlayer 
-                        url="https://www.youtube.com/watch?v=lioPzgWttWQ"
-                        playing={true}  
-                        controls={false}  
-                        loop={true}  
-                        muted={true} 
-                        width="100%" 
-                        height="100%"
-                    />
+                    <Image src={"../images/fortnite.jpg"} fluid></Image>
                 </Col>
             </Row>
             <Row>
@@ -87,17 +78,12 @@ export default () => {
                         </Card>
                 </Col>
             </Row>
-            <Row>
+            <Row className="mt-4 mb-4">
                 <Col xs={12} md={12}>
-                    <ChangeCard 
-                    title={"Fortnite"}
-                    img={"../images/fortnite.jpg"}
-                    text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative. A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative.A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}
-                    >
-                    </ChangeCard>
+                    <ChangeCard></ChangeCard>
                 </Col>
             </Row>
-            <Row>
+            <Row className="mb-3">
                 <Col xs={12} md={3}>
                     <Card 
                         title={"Fortnite"}

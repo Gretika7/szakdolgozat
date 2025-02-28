@@ -5,7 +5,7 @@ export default () => {
         <Container>
             <Row>
                 <Col xs={12} md={6} className="rajta" style={{paddingBottom:"100px"}}>
-                    <h2 className="text-center pt-5">Bejelentkezés</h2> 
+                    <h2 className="text-center pt-5 mt-4 mb-4 pb-5">Bejelentkezés</h2> 
                     <Form>
                         <FloatingLabel 
                             controlId="floatingInput"
@@ -33,7 +33,7 @@ export default () => {
                 </Col>
 
                 <Col xs={12} md={6} className="rajta" style={{paddingBottom:"100px"}}>
-                    <h2  className="text-center pt-5">Regisztráció</h2> 
+                    <h2 className="text-center pt-5 mt-4 mb-4 pb-5">Regisztráció</h2> 
                         <Form>
                         <FloatingLabel
                             controlId="floatingInput"

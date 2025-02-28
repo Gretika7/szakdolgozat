@@ -1,7 +1,20 @@
 import { Container, Nav, Navbar,Image } from "react-bootstrap";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default () => {
+    const storedTheme = localStorage.getItem("theme") || "light";
+    const [theme, setTheme] = useState(storedTheme);
+
+    const toggleTheme = () => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        setTheme(newTheme);
+        localStorage.setItem("theme", newTheme);
+        document.body.className = newTheme;
+    };
+
+    document.body.className = theme;
+
     return (
         <Navbar expand="lg" sticky="top" style={{backgroundColor:"#3e2246"}}>
             <Navbar.Brand as={Link} to="/" style={{color:"white",marginLeft:"10px"}} className="title">
@@ -17,7 +30,7 @@ export default () => {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-            <Image style={{cursor:"pointer", width:"40px", marginRight:"10px", marginLeft:"10px"}} src="../images/yingyang.svg"></Image>
+            <Image style={{cursor:"pointer", width:"40px", marginRight:"10px", marginLeft:"10px"}} src="../images/yingyang.svg" onClick={toggleTheme}></Image>
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{borderColor:"white" }}></Navbar.Toggle>
         </Navbar>
     );

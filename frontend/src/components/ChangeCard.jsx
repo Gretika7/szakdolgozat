@@ -1,18 +1,84 @@
-import {Col,Row,Image } from 'react-bootstrap';
+import {Carousel, Image} from 'react-bootstrap';
+import ReactPlayer from "react-player";
 
-export default ({ title, img, text}) => {
-    return (
-        <Row className='mt-4 mb-4' style={{backgroundColor:"#3e2246" , color:"white",textAlign:"center", borderRadius:"5px"}}>
-            <Col xs={12} md={9}>
-                <Image src={img} fluid></Image>
-            </Col>
-            <Col xs={12} md={3}>
-                <h2>
-                    {title}
-                </h2>
-                <p>{text}</p>
-                <Image style={{cursor:"pointer",width:"40px"}} src="../images/cart.svg"></Image>
-            </Col>
-        </Row>
-    );
+export default () => {
+  return (
+        <Carousel>
+            <Carousel.Item>
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=lioPzgWttWQ"
+                    playing={true}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="400px"
+                />
+                <Carousel.Caption>
+                    <h3>Fortnite</h3>
+                    <p>Best játék ever.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=lioPzgWttWQ"
+                    playing={true}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="400px"
+                />
+                <Carousel.Caption>
+                    <h3>Fortnite</h3>
+                    <p>Best játék ever.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=lioPzgWttWQ"
+                    playing={true}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="400px"
+                />
+                <Carousel.Caption>
+                    <h3>Fortnite</h3>
+                    <p>Best játék ever.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=lioPzgWttWQ"
+                    playing={true}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="400px"
+                />
+                <Carousel.Caption>
+                    <h3>Fortnite</h3>
+                    <p>Best játék ever.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=lioPzgWttWQ"
+                    playing={true}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="400px"
+                />
+                <Carousel.Caption>
+                    <h3>Fortnite</h3>
+                    <p>Best játék ever.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+        </Carousel>
+  );
 }

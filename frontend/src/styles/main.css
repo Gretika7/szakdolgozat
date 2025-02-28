@@ -1,4 +1,4 @@
-h1,h2,h3,h4,h5,.title {
+h1,h2,h3,h4,h5,.title, #modalTitle {
     font-family: "Rubik Spray Paint", serif;
     font-weight: 400;
     font-style: normal;
@@ -27,8 +27,16 @@ h1,h2,h3,h4,h5,.title {
 }
 .rajta:hover .input {
     background-color: #3e2246;
-  }
+}
 
 .rajta:hover .text,p{
     color:white;
-  }
+}
+
+body.light {
+    background: linear-gradient(to right, #394fb4, #ad4685);
+}
+
+body.dark {
+    background: linear-gradient(to right, #122164, #5e1040);
+}
