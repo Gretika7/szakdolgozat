@@ -1,4 +1,4 @@
-import {Carousel, Image} from 'react-bootstrap';
+import {Carousel} from 'react-bootstrap';
 import ReactPlayer from "react-player";
 
 export default () => {
@@ -12,7 +12,7 @@ export default () => {
                     loop={true}
                     muted={true}
                     width="100%"
-                    height="400px"
+                    height="600px"
                 />
                 <Carousel.Caption>
                     <h3>Fortnite</h3>
@@ -27,7 +27,7 @@ export default () => {
                     loop={true}
                     muted={true}
                     width="100%"
-                    height="400px"
+                    height="600px"
                 />
                 <Carousel.Caption>
                     <h3>Fortnite</h3>
@@ -42,7 +42,7 @@ export default () => {
                     loop={true}
                     muted={true}
                     width="100%"
-                    height="400px"
+                    height="600px"
                 />
                 <Carousel.Caption>
                     <h3>Fortnite</h3>
@@ -57,7 +57,7 @@ export default () => {
                     loop={true}
                     muted={true}
                     width="100%"
-                    height="400px"
+                    height="600px"
                 />
                 <Carousel.Caption>
                     <h3>Fortnite</h3>
@@ -72,7 +72,7 @@ export default () => {
                     loop={true}
                     muted={true}
                     width="100%"
-                    height="400px"
+                    height="600px"
                 />
                 <Carousel.Caption>
                     <h3>Fortnite</h3>

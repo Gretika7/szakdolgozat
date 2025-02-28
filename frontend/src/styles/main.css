@@ -40,3 +40,51 @@ body.light {
 body.dark {
     background: linear-gradient(to right, #122164, #5e1040);
 }
+
+/* Navbar.css */
+
+/* Transition for side panel */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially hidden off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: #5b3067;
+    color: white;
+    box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+    transition: right 0.3s ease, opacity 0.3s ease; /* Added opacity transition */
+}
+
+/* Show the side panel */
+.side-panel.show {
+    right: 0;
+    opacity: 1;
+}
+
+/* Style for close button */
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+
+/* YingYang icon animation */
+.yingyang-icon {
+    transition: transform 0.3s ease, filter 0.3s ease; /* Added filter transition */
+}
+
+.yingyang-icon.active {
+    transform: rotate(180deg); /* Rotation effect */
+    filter: brightness(1.2) saturate(1.5); /* Extra visual effect for color change */
+}

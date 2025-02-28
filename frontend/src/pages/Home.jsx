@@ -1,6 +1,7 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
 import Card from "../components/Card";
 import ChangeCard from "../components/ChangeCard";
+import ChangeImage from "../components/ChangeImage";
 
 export default () => {
     return (
@@ -45,7 +46,7 @@ export default () => {
                         </Card>
                 </Col>
                 <Col xs={12} md={9} className='mt-4 mb-4'>
-                    <Image src={"../images/fortnite.jpg"} fluid></Image>
+                    <ChangeImage></ChangeImage>
                 </Col>
             </Row>
             <Row>
