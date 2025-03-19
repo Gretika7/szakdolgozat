@@ -1,6 +1,6 @@
 import { Container, Row, Col, Card, Image} from "react-bootstrap";
 
-export default () => {
+export default (Mygames) => {
     return (
         <Container className="text-center mt-2" style={{color: "white"}}>
             <h1 className="mb-3">Játékaim</h1>
