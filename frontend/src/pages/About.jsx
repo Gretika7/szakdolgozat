@@ -2,9 +2,9 @@ import { Container, Row, Col, Card, Image} from "react-bootstrap";
 
 export default () => {
     return (
-        <Container className="text-center mt-2">
+        <Container className="text-center">
             <Row className="mb-5">
-            <h1 className="mb-3">Rólunk</h1>
+            <h1 className="mb-3 mt-3">Rólunk</h1>
                 <Col xs={12} md={12} style={{backgroundColor:"#3e2246"}} className="rounded pb-3 mb-5">
                 <h2 className="pt-3">Miért jött létre ez a webshop?</h2>
                 <p>Ezt a weboldalt elsősorban azoknak hoztuk létre, akik szívesen töltik szabadidejüket videójátékokkal, de nem tudják, hol szerezhetnék be azokat olcsóbban, kényelmesebben és megbízható környezetben. 

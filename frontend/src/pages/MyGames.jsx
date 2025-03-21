@@ -2,8 +2,8 @@ import { Container, Row, Col, Card, Image} from "react-bootstrap";
 
 export default (Mygames) => {
     return (
-        <Container className="text-center mt-2" style={{color: "white"}}>
-            <h1 className="mb-3">Játékaim</h1>
+        <Container className="text-center" style={{color: "white"}}>
+            <h1 className="mb-3 mt-3">Játékaim</h1>
             <Row>
                 <Col xs={12} md={4}>
                     <h2>Játék neve</h2>

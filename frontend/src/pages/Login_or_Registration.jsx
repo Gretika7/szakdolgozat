@@ -2,9 +2,9 @@ import { Container, Row, Col, Button, Form, FloatingLabel} from "react-bootstrap
 
 export default () => {
     return (
-        <Container>
+        <Container fluid>
             <Row>
-                <Col xs={12} md={6} className="rajta" style={{paddingBottom:"100px"}}>
+                <Col xs={12} md={6} className="rajta pt-5 pb-5" style={{paddingBottom:"100px"}}>
                     <h2 className="text-center pt-5 mt-4 mb-4 pb-5">Bejelentkezés</h2> 
                     <Form>
                         <FloatingLabel 
@@ -26,13 +26,13 @@ export default () => {
                             placeholder="Jelszó" 
                         />
                         </FloatingLabel>
-                    <Button className="mt-3 d-flex justify-content-center mx-auto " variant="light">
+                    <Button className="mt-5 mb-5 d-flex justify-content-center mx-auto " variant="light">
                         Bejelentkezés
                     </Button>
                     </Form>
                 </Col>
 
-                <Col xs={12} md={6} className="rajta" style={{paddingBottom:"100px"}}>
+                <Col xs={12} md={6} className="rajta pt-5 pb-5" style={{paddingBottom:"100px"}}>
                     <h2 className="text-center pt-5 mt-4 mb-4 pb-5">Regisztráció</h2> 
                         <Form>
                         <FloatingLabel
@@ -82,7 +82,7 @@ export default () => {
                             </Col>
                         </Row>
 
-                    <Button className="mt-3 d-flex justify-content-center mx-auto" variant="light">
+                    <Button className="mt-5 mb-5 d-flex justify-content-center mx-auto" variant="light">
                             Regisztráció
                     </Button>
                     </Form>    

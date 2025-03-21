@@ -28,16 +28,16 @@ export default () => {
 
     return (
         <>
-            <Navbar expand="lg" sticky="top" style={{ backgroundColor: "#3e2246" }}>
-                <Navbar.Brand as={Link} to="/" style={{ color: "white", marginLeft: "10px" }} className="title">
+            <Navbar expand="lg" sticky="top" style={{ backgroundColor: "#3e2246" }} className="pt-3 pb-3">
+                <Navbar.Brand as={Link} to="/" style={{ color: "white", marginLeft: "10px", fontSize: "25px" }} className="title">
                     Gamer's Market
                 </Navbar.Brand>
                 <Container>
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mx-auto">
+                        <Nav className="mx-auto" style={{fontSize: "20px"}}>
                             <Nav.Link as={Link} to="/" style={{ color: "white" }}>Főoldal</Nav.Link>
                             <Nav.Link as={Link} to="/about" style={{ color: "white" }}>Rólunk</Nav.Link>
-                            <Nav.Link as={Link} to="/cart" style={{ color: "white" }}>Kosár</Nav.Link>
+                            <Nav.Link as={Link} to="/mycart" style={{ color: "white" }}>Kosaram</Nav.Link>
                             <Nav.Link as={Link} to="/mygames" style={{ color: "white" }}>Játékaim</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

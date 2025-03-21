@@ -27,16 +27,16 @@ export default () => {
     document.body.className = theme;
 
     return (
-        <Navbar expand="lg" sticky="top" style={{backgroundColor:"#3e2246"}}>
-            <Navbar.Brand as={Link} to="/" style={{color:"white",marginLeft:"10px"}} className="title">
+        <Navbar expand="lg" sticky="top" style={{backgroundColor:"#3e2246"}} className="pt-3 pb-3">
+            <Navbar.Brand as={Link} to="/" style={{color:"white",marginLeft:"10px", fontSize: "25px"}} className="title">
                     Gamer's Market
                 </Navbar.Brand>
             <Container>
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mx-auto">
+                    <Nav className="mx-auto" style={{fontSize: "20px"}}>
                         <Nav.Link as={Link} to="/" style={{color:"white"}}>Főoldal</Nav.Link>
                         <Nav.Link as={Link} to="/about" style={{color:"white"}}>Rólunk</Nav.Link>
-                        <Nav.Link as={Link} to="/login_or_registration" style={{color:"white"}}>Bejelentkezés/Regisztráció</Nav.Link>
+                        <Nav.Link as={Link} to="/login-or-registration" style={{color:"white"}}>Bejelentkezés/Regisztráció</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
