@@ -24,17 +24,20 @@ app.get("/games/:game_name", async (req, res) => {
         res.json(game);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ error: "Nem sikerült lekérdezni a játékokat!" });
+        res.status(500).json({  message: "Nem sikerült lekérdezni a játékokat!" });
     }
 });
 
-app.get("/game_info", async (req, res) => {
+app.get("/Info", async (req, res) => {
     try {
-        const [Game_info] = await pool.query("SELECT * FROM game_info;");
-        res.json(Game_info);
+        const [Game_info] = await pool.query("SELECT * FROM Info;");
+        if(Game_info.length > 0)
+        {
+            res.json(Game_info);
+        }
     } catch (err) {
         console.error(err);
-        res.status(500).json({ error: "Nem sikerült lekérdezni a játékokat!" });
+        res.status(500).json({ message: "Nem sikerült lekérdezni a játékokat!" });
     }
 });
 
@@ -44,13 +47,13 @@ app.post("/regisztracio", async (req, res) =>{
         const [takenUser] = await pool.query('select * from customers where username like ?;', body.username);
 
         if(takenUser.length !== 0){
-            res.json({message: "A felhasználónév foglalt!"});
+            throw new Error("Ez a felhasználónév már foglalt!");
         }
 
         const secretPassword = await bcrypt.hash(body.password, 14);
         const [newUser] = await pool.query('insert into customers(username, email, password) values (?,?,?);',[body.username, body.email, secretPassword]);
         if(newUser.affectedRows < 1){
-            res.status(500).json({message: "Sikertelen regisztráció!"});
+            throw new Error("Sikertelen regisztráció!");
         }
 
         res.status(201).json({message: "Sikeres regisztráció!"});
@@ -59,7 +62,7 @@ app.post("/regisztracio", async (req, res) =>{
         console.log(err);
         if(err.message.includes("Érvénytelen!")){
             res.status(400).json({
-                message: err.message
+                error: err.message
             });
             return;
         }
@@ -68,6 +71,7 @@ app.post("/regisztracio", async (req, res) =>{
         });
     }
 });
+
 
 app.post("/Bejelentkezes", async (req, res) => {
     try {
