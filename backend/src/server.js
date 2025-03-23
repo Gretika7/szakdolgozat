@@ -107,7 +107,7 @@ app.post("/regisztracio", async (req, res) =>{
 
 app.post("/bejelentkezes", async (req, res) => {
 
-})
+});
 
 
 
