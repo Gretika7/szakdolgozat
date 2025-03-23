@@ -1,32 +1,31 @@
-import { Container, Row, Col, Button, Form, FloatingLabel } from "react-bootstrap";
+import React, {useState} from 'react';
+import {Container, Row, Col, Button, Form, InputGroup} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default () => {
     return (
-        <Container className="text-center" style={{color: "white"}}>
-            <h1 className="mb-3 mt-3">Kosaram</h1>
+        <Container>
             <Row>
-                <Col xs={12} md={8}>
-
-                </Col>
-                <Col xs={12} md={4}>
-                    <p>Kedvezmény kódja</p>
+                <Col>
+                    <h1>Cart</h1>
+                    <h3>Total: Ft</h3>
                     <Form>
-                        <FloatingLabel 
-                            controlId="floatingInput"
-                            label="Kód"
-                            className="mb-3 text"
-                        >
-                        <Form.Control className="input" 
-                            type="text" 
-                            placeholder="Kód" 
-                        />
-                        </FloatingLabel>
-                    <Button variant="light">
-                        Küldés
-                    </Button>
+                        <Form.Group>
+                            <Form.Label>Discount code</Form.Label>
+                            <InputGroup>
+                                <Form.Control
+                                    type="text"
+                                />
+                                <InputGroup.Append>
+                                    <Button>Apply</Button>
+                                </InputGroup.Append>
+                            </InputGroup>
+                        </Form.Group>
                     </Form>
+                    <h3>Discounted price:Ft</h3>
+                    <Button>Purchase</Button>
                 </Col>
             </Row>
-        </Container>
-    );
+            </Container>
+    )
 }
