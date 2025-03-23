@@ -11,28 +11,28 @@ export default () => {
                 <Col xs={12} md={3}>
                     <Card 
                         title={"Fortnite"}
-                        img={"../images/fortnite.jpg"}
+                        img={"../images/games_images/fortnite.png"}
                         text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                         </Card>
                 </Col>
                 <Col xs={12} md={3}>
                     <Card 
                        title={"Fortnite"}
-                       img={"../images/fortnite.jpg"}
+                       img={"../images/games_images/codwarzone.png"}
                        text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                        </Card>
                 </Col>
                 <Col xs={12} md={3}>
                     <Card 
                         title={"Fortnite"}
-                        img={"../images/fortnite.jpg"}
+                        img={"../images/games_images/cs2.png"}
                         text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                         </Card>
                 </Col>
                 <Col xs={12} md={3}>
                     <Card 
                         title={"Fortnite"}
-                        img={"../images/fortnite.jpg"}
+                        img={"../images/games_images/fifaeafc25.png"}
                         text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                         </Card>
                 </Col>
@@ -41,7 +41,7 @@ export default () => {
             <Col xs={12} md={3}>
                     <Card 
                         title={"Fortnite"}
-                        img={"../images/fortnite.jpg"}
+                        img={"../images/games_images/forzahorizon5.png"}
                         text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                         </Card>
                 </Col>
@@ -53,28 +53,28 @@ export default () => {
                 <Col xs={12} md={3}>
                     <Card 
                         title={"Fortnite"}
-                        img={"../images/fortnite.jpg"}
+                        img={"../images/games_images/gtav.png"}
                         text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                         </Card>
                 </Col>
                 <Col xs={12} md={3}>
                     <Card 
                        title={"Fortnite"}
-                       img={"../images/fortnite.jpg"}
+                       img={"../images/games_images/minecraft.png"}
                        text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                        </Card>
                 </Col>
                 <Col xs={12} md={3}>
                     <Card 
                         title={"Fortnite"}
-                        img={"../images/fortnite.jpg"}
+                        img={"../images/games_images/pubg.png"}
                         text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                         </Card>
                 </Col>
                 <Col xs={12} md={3}>
                     <Card 
                         title={"Fortnite"}
-                        img={"../images/fortnite.jpg"}
+                        img={"../images/games_images/reddead2redemption.png"}
                         text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                         </Card>
                 </Col>
@@ -88,28 +88,28 @@ export default () => {
                 <Col xs={12} md={3}>
                     <Card 
                         title={"Fortnite"}
-                        img={"../images/fortnite.jpg"}
+                        img={"../images/games_images/residentevil7.png"}
                         text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                         </Card>
                 </Col>
                 <Col xs={12} md={3}>
                     <Card 
                        title={"Fortnite"}
-                       img={"../images/fortnite.jpg"}
+                       img={"../images/games_images/sims4.png"}
                        text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                        </Card>
                 </Col>
                 <Col xs={12} md={3}>
                     <Card 
                         title={"Fortnite"}
-                        img={"../images/fortnite.jpg"}
+                        img={"../images/games_images/Wither3.png"}
                         text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                         </Card>
                 </Col>
                 <Col xs={12} md={3}>
                     <Card 
                         title={"Fortnite"}
-                        img={"../images/fortnite.jpg"}
+                        img={"../images/.jpg"}
                         text={"A Fortnite egy Epic Games által fejlesztett 2017-ben kiadott videójáték. Három különálló játékmódverzióban érhető el: Save the World ; Battle Royale ; Creative"}>
                         </Card>
                 </Col>

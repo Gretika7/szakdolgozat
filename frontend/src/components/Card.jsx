@@ -2,6 +2,7 @@ import {Card, Image} from 'react-bootstrap';
 import Modal from "./Modal.jsx"
 
 export default ({ title, img, text}) => {
+    
     return (
         <Card className='mt-4 mb-4' style={{backgroundColor:"#3e2246" , color:"white", textAlign:"center"}}>
             <Card.Img variant="top" src={img}  />
