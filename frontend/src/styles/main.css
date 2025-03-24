@@ -14,7 +14,7 @@ h1,h2,h3,h4,h5,.title, #modalTitle {
     transition: background-color 0.3s ease;
 }
 .rajta:hover {
-    background-color: white;   
+    background-color: white;  
 }
 .rajta:hover > h2{
     background: linear-gradient(to right, #394fb4, #ad4685); 
@@ -27,6 +27,7 @@ h1,h2,h3,h4,h5,.title, #modalTitle {
 }
 .rajta:hover .input {
     background-color: #3e2246;
+    color: white;
 }
 
 .rajta:hover .text,p{

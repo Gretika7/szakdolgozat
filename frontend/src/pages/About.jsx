@@ -40,7 +40,7 @@ export default () => {
                     <Card className='mt-4 mb-4' style={{backgroundColor:"#3e2246" , color:"white",textAlign:"center"}}>
                         <Card.Body>
                             <Card.Title className='title'>Molnár Máté Norbert</Card.Title>
-                            <Card.Text>A projekt során Ő volt a konzulensünk, aki végigkövette a folyamatokat. Tanító bácsi, nagyon hosszú hajjal.</Card.Text>
+                            <Card.Text>A projekt során Ő volt a konzulensünk, aki végigkövette a folyamatokat.</Card.Text>
                             <Image src="../images/swan.png"></Image>
                         </Card.Body>
                     </Card>

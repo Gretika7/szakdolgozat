@@ -3,14 +3,22 @@ import { Home,About,Cart,Login_or_Registration, NotFound, MyGames } from "./page
 import NavBar from "./components/NavBar.jsx";
 import LoggedNav from "./components/LoggedNav.jsx";
 import Footer from "./components/Footer.jsx";
+import { useState, useEffect } from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/main.css";
 
 export default () => {
+    const [isLogged, setIsLogged] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        setIsLogged(!!token);
+    }, []);
+
     return (
         <BrowserRouter>
-            <NavBar></NavBar>
-            {/*<LoggedNav></LoggedNav>*/}
+            {isLogged ? <LoggedNav></LoggedNav> : <NavBar></NavBar>}
             <Routes>
                 <Route path="/" element={<Home></Home>}></Route>
                 <Route path="/about" element={<About></About>}></Route>
