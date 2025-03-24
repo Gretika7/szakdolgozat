@@ -18,28 +18,16 @@ const pool = mysql.createPool({
     database:"szakdolgozat"
 });
 
-app.get("/games/:game_name", async (req, res) => {
+app.get("/games/fooldal", async(req, res) => {
     try {
-        const [game] = await pool.query("SELECT * FROM games WHERE game_name LIKE ?;");
-        res.json(game);
+        const [games] = await pool.query("SELECT picture, title, short_description FROM games;");
+        res.json(games);
     } catch (err) {
         console.error(err);
-        res.status(500).json({  message: "Nem sikerült lekérdezni a játékokat!" });
+        res.status(500).json({ message: "Valami hiba történt." });
     }
 });
 
-app.get("/Info", async (req, res) => {
-    try {
-        const [Game_info] = await pool.query("SELECT * FROM Info;");
-        if(Game_info.length > 0)
-        {
-            res.json(Game_info);
-        }
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ message: "Nem sikerült lekérdezni a játékokat!" });
-    }
-});
 
 app.post("/regisztracio", async (req, res) =>{
     try {
