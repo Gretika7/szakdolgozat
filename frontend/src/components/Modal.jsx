@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Modal, Image, Container, Row, Col } from "react-bootstrap";
 import ReactPlayer from "react-player";
 
 export default () => {
     const [lgShow, setLgShow] = useState(false);
+
+    const [isLogged, setIsLogged] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        setIsLogged(!!token);
+    }, []);
 
     return (
         <>
@@ -79,7 +86,7 @@ export default () => {
                         borderTop: "none",
                     }}
                 >
-                    <Image style={{ cursor: "pointer", width: "40px" }} src="../images/cart.svg" />
+                    {isLogged ? <Image style={{ cursor: "pointer", width: "40px" }} src="../images/cart.svg" /> : ""}
                 </Modal.Footer>
             </Modal>
 

@@ -27,7 +27,7 @@ export default () => {
     document.body.className = theme;
 
     return (
-        <Navbar expand="lg" sticky="top" style={{backgroundColor:"#3e2246"}} className="pt-3 pb-3">
+        <Navbar expand="lg" sticky="top" style={{backgroundColor:"#3e2246"}} className="pt-3 pb-3 navbar-dark">
             <Navbar.Brand as={Link} to="/" style={{color:"white",marginLeft:"10px", fontSize: "25px"}} className="title">
                     Gamer's Market
                 </Navbar.Brand>
