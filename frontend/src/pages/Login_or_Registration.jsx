@@ -75,6 +75,8 @@ export default () => {
             }
             else {
                 localStorage.setItem("token", token);
+                navigate("/");
+                window.location.reload();
             }                
         }catch(err){
             setError("Valami hiba történt a bejelentkezés sortán!");

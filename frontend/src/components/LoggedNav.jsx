@@ -1,12 +1,13 @@
 import { Container, Nav, Navbar, Image } from "react-bootstrap";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 export default () => {
     const storedTheme = localStorage.getItem("theme") || "light";
     const [theme, setTheme] = useState(storedTheme);
     const [showSidePanel, setShowSidePanel] = useState(false);
     const [isYingYangClicked, setIsYingYangClicked] = useState(false);
+    const navigate = useNavigate();
 
     const toggleTheme = () => {
         const newTheme = theme === "light" ? "dark" : "light";
@@ -22,6 +23,12 @@ export default () => {
     const handleYingYangClick = () => {
         setIsYingYangClicked(!isYingYangClicked);
         toggleTheme();
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/");
+        window.location.reload();
     };
 
     document.body.className = theme;
@@ -50,6 +57,7 @@ export default () => {
                 <Image
                     style={{ cursor: "pointer", width: "40px", marginRight: "10px", marginLeft: "10px" }}
                     src="../images/logout.svg"
+                    onClick={handleLogout}
                 />
                 <Image
                     className={`yingyang-icon ${isYingYangClicked ? 'active' : ''}`}
