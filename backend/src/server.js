@@ -34,7 +34,7 @@ app.get("/games", async(req, res) => {
 
 app.get("/mygames", async(req, res) => {
     try{
-        const [mygames] = await pool.query("SELECT title, price, FROM games;");
+        const [mygames] = await pool.query("SELECT title, price FROM games WHERE id = ?;");
         res.json(mygames);
     }
     catch(err){
@@ -74,6 +74,32 @@ try {
 app.post("/register", async (req, res) =>{
     try {
         const body = req.body;
+
+        if (Object.keys(body).length !== 3) {
+            throw new Error(
+                "A kérésnek tartalmaznia kell a felhasználónevet , az emailt és a jelszót!"
+            );
+        }
+
+        if (!body.username || typeof body.username !== "string") {
+            throw new Error(
+                "A felhasználó névnek szövegnek kell lennie!"
+            );
+        }
+
+        if (!body.email || typeof body.email !== "string") {
+            throw new Error(
+                "Az email címnek szövegnek kell lennie!"
+            );
+        }
+
+        if (!body.password || typeof body.password !== "string") {
+            throw new Error(
+                "A jelszónak névnek szövegnek kell lennie!"
+            );
+        } 
+
+
         const [takenUser] = await pool.query('SELECT * FROM users WHERE username LIKE ?;', body.username);
 
         if(takenUser.length !== 0){
