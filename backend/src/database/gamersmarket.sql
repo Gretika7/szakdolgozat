@@ -13,7 +13,7 @@ CREATE TABLE games(
     title VARCHAR(255) ,
     short_description VARCHAR(255),
     long_description TEXT,
-    system_requiments TEXT,
+    system_requirements TEXT,
     company VARCHAR(255),
     picture VARCHAR(255),
     link VARCHAR(255),

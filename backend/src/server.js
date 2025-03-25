@@ -15,12 +15,12 @@ const pool = mysql.createPool({
     host: "localhost",
     user: "root",
     password:"",
-    database:"szakdolgozat"
+    database:"gamersmarket"
 });
 
-app.get("/games/fooldal", async(req, res) => {
+app.get("/games", async(req, res) => {
     try {
-        const [games] = await pool.query("SELECT picture, title, short_description FROM games;");
+        const [games] = await pool.query("SELECT * FROM games;");
         res.json(games);
     } catch (err) {
         console.error(err);
@@ -28,20 +28,63 @@ app.get("/games/fooldal", async(req, res) => {
     }
 });
 
+//megvásárolt játékok -> get
+//cart -> post
+//módosítás -> put 
 
-app.post("/regisztracio", async (req, res) =>{
+app.get("/mygames", async(req, res) => {
+    try{
+        const [mygames] = await pool.query("SELECT title, price, FROM games;");
+        res.json(mygames);
+    }
+    catch(err){
+        console.error(err);
+        res.status(500).json({message: "Valami hiba történt."});
+    }
+});
+
+app.post("/cart", async(req, res) => {
+    try{
+        const body = req.body;
+        const [mycart] = await pool.query("INSERT INTO shopping(date) VALUES (?);", [body.date]);
+        if(mycart.affectedRows < 1){
+            res.status(500).json({message: "Sikertelen vásárlás!"});
+        }
+        res.status(201).json({message: "Sikeres vásárlás!"});
+    }
+    catch(err){
+        console.error(err);
+        res.status(500).json({message: "Valami hiba történt."});
+    }
+});
+
+app.put("/update", async(req, res) => {
+try {
+    const body = req.body;
+    const [update] = await pool.query("UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?", [body.username, body.email, body.password, body.id]);
+    if(update.affectedRows < 1){
+        res.status(500).json({message: "Sikertelen módosítás!"});
+    }
+    res.status(201).json({message: "Sikeres módosítás!"});
+} catch (error) {
+    
+}
+});
+
+app.post("/register", async (req, res) =>{
     try {
         const body = req.body;
-        const [takenUser] = await pool.query('select * from customers where username like ?;', body.username);
+        const [takenUser] = await pool.query('SELECT * FROM users WHERE username LIKE ?;', body.username);
 
         if(takenUser.length !== 0){
             throw new Error("Ez a felhasználónév már foglalt!");
         }
 
         const secretPassword = await bcrypt.hash(body.password, 14);
-        const [newUser] = await pool.query('insert into customers(username, email, password) values (?,?,?);',[body.username, body.email, secretPassword]);
+        const [newUser] = await pool.query('INSERT INTO users(username, email, password) VALUES (?,?,?);',[body.username, body.email, secretPassword]);
+        
         if(newUser.affectedRows < 1){
-            throw new Error("Sikertelen regisztráció!");
+            res.status(500).json({message: "Sikertelen regisztráció!"});
         }
 
         res.status(201).json({message: "Sikeres regisztráció!"});
@@ -61,7 +104,7 @@ app.post("/regisztracio", async (req, res) =>{
 });
 
 
-app.post("/Bejelentkezes", async (req, res) => {
+app.post("/login", async (req, res) => {
     try {
         const body = req.body;
 
@@ -84,7 +127,7 @@ app.post("/Bejelentkezes", async (req, res) => {
         }
 
         const [user] = await pool.query(
-            "SELECT * FROM users WHERE username like ?;",
+            "SELECT * FROM users WHERE username LIKE ?;",
             [body.username]
         );
         if (user.length === 0) {
