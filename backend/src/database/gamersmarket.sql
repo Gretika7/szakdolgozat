@@ -29,7 +29,7 @@ CREATE TABLE shopping(
     FOREIGN KEY (gameid) REFERENCES games(id)
 );
 
-INSERT INTO games (title, short_description, long_description, system_requiments, company, picture, link, price) VALUES
+INSERT INTO games (title, short_description, long_description, system_requirements, company, picture, link, price) VALUES
 ('Fortnite', 'A Fortnite az Epic Games által fejlesztett 2017-ben kiadott videókáték. Három különálló játékmód verzióban érhető el: Save the world; Battle Royal; Creative', 'A Fortnite egy pörgős, ingyenesen játszható Battle Royale, ahol 100 játékos küzd a túlélésért. Építs erődöket, gyűjts fegyvereket, és légy az utolsó talpon maradó! Kreatív módban saját világokat alkothatsz, a mentőakcióban pedig szörnyek hordái ellen harcolhatsz. Folyamatos frissítések, új skinek és', 'Intel Core i3-3225 / AMD Ryzen 3 1200, 8 GB RAM, NVIDIA GTX 960 / AMD Radeon R9 280', 'Epic Games','fortnite.png','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.epicgames.com%2Ffortnite%2Fen-US%2Fhome&psig=AOvVaw3J9J', 8000),
 
 ('GTA 5', 'A GTA V egy akciódús nyílt világú játék, ahol három bűnöző életét irányíthatod Los Santosban. Rabolj, vezess, lőj, és fedezd fel a hatalmas várost!','A GTA 5 egy nyílt világú akció-kalandjáték, ahol három bűnöző életét követheted Los Santosban. Rabolj bankokat, hajts szuperautókkal, fedezd fel a hatalmas várost és annak környékét. A történet izgalmas, a játékmenet változatos, a multiplayer mód pedig végtelen szórakozást nyújt.', ' Intel Core 2 Quad CPU Q6600 / AMD Phenom X4 9850, 4 GB RAM, NVIDIA 9800 GT 1GB / AMD HD 4870 1GB','Rocstar Games','gtav.png','https://www.youtube.com/watch?v=QkkoHAzjnUs', 15000),

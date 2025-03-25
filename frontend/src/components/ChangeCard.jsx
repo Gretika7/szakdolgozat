@@ -15,13 +15,12 @@ export default () => {
                     height="600px"
                 />
                 <Carousel.Caption>
-                    <h3>Fortnite</h3>
-                    <p>Best játék ever.</p>
+                    <h3>Fornite</h3>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <ReactPlayer
-                    url="https://www.youtube.com/watch?v=lioPzgWttWQ"
+                    url="https://www.youtube.com/watch?v=QkkoHAzjnUs"
                     playing={true}
                     controls={false}
                     loop={true}
@@ -30,13 +29,12 @@ export default () => {
                     height="600px"
                 />
                 <Carousel.Caption>
-                    <h3>Fortnite</h3>
-                    <p>Best játék ever.</p>
+                    <h3>GTA V</h3>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <ReactPlayer
-                    url="https://www.youtube.com/watch?v=lioPzgWttWQ"
+                    url="https://www.youtube.com/watch?v=MmB9b5njVbA"
                     playing={true}
                     controls={false}
                     loop={true}
@@ -45,13 +43,12 @@ export default () => {
                     height="600px"
                 />
                 <Carousel.Caption>
-                    <h3>Fortnite</h3>
-                    <p>Best játék ever.</p>
+                    <h3>Minecraft</h3>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <ReactPlayer
-                    url="https://www.youtube.com/watch?v=lioPzgWttWQ"
+                    url="https://www.youtube.com/watch?v=pBM2xyco_Kg"
                     playing={true}
                     controls={false}
                     loop={true}
@@ -60,13 +57,12 @@ export default () => {
                     height="600px"
                 />
                 <Carousel.Caption>
-                    <h3>Fortnite</h3>
-                    <p>Best játék ever.</p>
+                    <h3>EA FC 25</h3>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <ReactPlayer
-                    url="https://www.youtube.com/watch?v=lioPzgWttWQ"
+                    url="https://www.youtube.com/watch?v=FYH9n37B7Yw"
                     playing={true}
                     controls={false}
                     loop={true}
@@ -75,8 +71,105 @@ export default () => {
                     height="600px"
                 />
                 <Carousel.Caption>
-                    <h3>Fortnite</h3>
-                    <p>Best játék ever.</p>
+                    <h3>Forza Horizon 5</h3>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=c80dVYcL69E"
+                    playing={true}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="600px"
+                />
+                <Carousel.Caption>
+                    <h3>Counter-Strike 2</h3>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=RgYqQsbKn6w"
+                    playing={true}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="600px"
+                />
+                <Carousel.Caption>
+                    <h3>Resident Evil 7</h3>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=WCVS01ZXBrk"
+                    playing={true}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="600px"
+                />
+                <Carousel.Caption>
+                    <h3>Sims 4</h3>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=uCd6tbUAy6o"
+                    playing={true}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="600px"
+                />
+                <Carousel.Caption>
+                    <h3>PUBG</h3>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=gmA6MrX81z4"
+                    playing={true}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="600px"
+                />
+                <Carousel.Caption>
+                    <h3>Red Dead Redemption 2</h3>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=1-l29HlKkXU"
+                    playing={true}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="600px"
+                />
+                <Carousel.Caption>
+                    <h3>Witcher 3</h3>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <ReactPlayer
+                    url="https://www.youtube.com/watch?v=0E44DClsX5Q"
+                    playing={true}
+                    controls={false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="600px"
+                />
+                <Carousel.Caption>
+                    <h3>Call of Duty : Warzone</h3>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
