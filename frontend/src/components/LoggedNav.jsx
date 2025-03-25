@@ -1,5 +1,5 @@
 import { Container, Nav, Navbar, Image } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link,useNavigate } from "react-router-dom";
 
 export default () => {
@@ -7,7 +7,50 @@ export default () => {
     const [theme, setTheme] = useState(storedTheme);
     const [showSidePanel, setShowSidePanel] = useState(false);
     const [isYingYangClicked, setIsYingYangClicked] = useState(false);
+    const [isEditing, setIsEditing] = useState(false);
+    const [userData, setUserData] = useState({ username: "", email: "" });
+    const [newUsername, setNewUsername] = useState("");
+    const [newEmail, setNewEmail] = useState("");
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const token = localStorage.getItem("token");
+                if(!token) {
+                    setLoading(false);
+                    return;
+                }
+                const response = await fetch("http://localhost:5000/user", {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+                if(!response.ok) {
+                    if(response.status === 401) {
+                        localStorage.removeItem("token");
+                        navigate("/login");
+                    }
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                if(data && data.username && data.email) {
+                    setUserData(data);
+                    setNewUsername(data.username);
+                    setNewEmail(data.email);
+                }else{
+                    setError("Hiba történt a felhasználó adatainak lekérdezése közben!");
+                }
+            } catch (err) {
+                setError(err.message);
+            }
+            setLoading(false);
+        }
+        fetchUserData();
+    }, [navigate]);
 
     const toggleTheme = () => {
         const newTheme = theme === "light" ? "dark" : "light";
@@ -29,6 +72,65 @@ export default () => {
         localStorage.removeItem("token");
         navigate("/");
         window.location.reload();
+    };
+
+    const handleEditClick = () => {
+        setIsEditing(true);
+        setNewUsername(userData.username);
+        setNewEmail(userData.email);
+    };
+
+    const handleSaveClick = async () => {
+        try {
+            const token = localStorage.getItem("token");
+            if(!token) {
+                console.error("No token found for update");
+                return;
+            }
+            const response = await fetch("http://localhost:5000/user",{
+                method:"PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    username: newUsername,
+                    email: newEmail
+                }),
+            });
+            if(!response.ok) {
+                if(response.status === 401) {
+                    localStorage.removeItem("token");
+                    navigate("/login");
+                }
+                const errorData = await response.json();
+                throw new Error(`HTTP error! status: ${response.status} message: ${errorData.message}`);
+            }
+
+            const updatedUserData = await response.json();
+            setUserData(updatedUserData);
+            setIsEditing(false);
+            alert("Sikeresen módosítottad a felhasználói adataidat!");
+
+        }catch(err) {
+            console.error(err);
+            alert("Hiba történt a felhasználói adatok módosítása közben!");
+            setError(err.message);
+        }
+    };
+
+    const handleCancelEditClick = () => {
+        setIsEditing(false);
+        setNewUsername(userData.username);
+        setNewEmail(userData.email);
+    };
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        if (name === "username") {
+            setNewUsername(value);
+        } else if (name === "email") {
+            setNewEmail(value);
+        }
     };
 
     document.body.className = theme;
@@ -82,12 +184,53 @@ export default () => {
                         </button>
                         <h2>Fiókom</h2>
                         <h4 className="mt-4">Felhasználónév</h4>
-                        <p>Ide a felhasználónév</p>
+                        {isEditing ? (
+                            <input
+                                type="text"
+                                name="username"
+                                value={newUsername}
+                                onChange={handleInputChange}
+                                className="form-control"
+                            />
+                        ) : (
+                            <p>{userData.username}</p>
+                        )}
                         <h4>E-mail cím</h4>
-                        <p>Ide az e-mail címet</p>
-                        <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
-                            <Image style={{ width: "40px", cursor: "pointer" }} src="../images/edit.svg" title="Módosítás"/>
-                            <Image style={{ width: "40px", cursor: "pointer" }} src="../images/save.svg" title="Mentés"/>
+                        {isEditing ? (
+                            <input
+                                type="email"
+                                name="email"
+                                value={newEmail}
+                                onChange={handleInputChange}
+                                className="form-control"
+                            />
+                        ) : (
+                            <p>{userData.email}</p>
+                        )}
+                         <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
+                            {isEditing ? (
+                                <>
+                                <Image
+                                    style={{ width: "40px", cursor: "pointer" }}
+                                    src="../images/save.svg"
+                                    title="Mentés"
+                                    onClick={handleSaveClick}
+                                />
+                                <Image
+                                    style={{ width: "40px", cursor: "pointer" }}
+                                    src="../images/close.svg"
+                                    title="Mégsem"
+                                    onClick={handleCancelEditClick}
+                                />
+                            </>
+                            ) : (
+                                <Image
+                                    style={{ width: "40px", cursor: "pointer" }}
+                                    src="../images/edit.svg"
+                                    title="Módosítás"
+                                    onClick={handleEditClick}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
