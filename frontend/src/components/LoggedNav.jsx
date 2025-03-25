@@ -52,17 +52,20 @@ export default () => {
                 <Image
                     style={{ cursor: "pointer", width: "40px", marginRight: "10px", marginLeft: "10px" }}
                     src="../images/user.svg"
+                    title="Profil"
                     onClick={handleUserClick}
                 />
                 <Image
                     style={{ cursor: "pointer", width: "40px", marginRight: "10px", marginLeft: "10px" }}
                     src="../images/logout.svg"
+                    title="Kijelentkezés"
                     onClick={handleLogout}
                 />
                 <Image
                     className={`yingyang-icon ${isYingYangClicked ? 'active' : ''}`}
                     style={{ cursor: "pointer", width: "40px", marginRight: "10px", marginLeft: "10px" }}
                     src="../images/yingyang.svg"
+                    title="Téma váltás"
                     onClick={handleYingYangClick}
                 />
                 <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ borderColor: "white" }}></Navbar.Toggle>
@@ -82,11 +85,9 @@ export default () => {
                         <p>Ide a felhasználónév</p>
                         <h4>E-mail cím</h4>
                         <p>Ide az e-mail címet</p>
-                        <h4>Jelszó</h4>
-                        <p>Ide a jelszót csillagokkal</p>
                         <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
-                            <Image style={{ width: "40px", cursor: "pointer" }} src="../images/edit.svg" />
-                            <Image style={{ width: "40px", cursor: "pointer" }} src="../images/save.svg" />
+                            <Image style={{ width: "40px", cursor: "pointer" }} src="../images/edit.svg" title="Módosítás"/>
+                            <Image style={{ width: "40px", cursor: "pointer" }} src="../images/save.svg" title="Mentés"/>
                         </div>
                     </div>
                 </div>

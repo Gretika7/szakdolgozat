@@ -17,6 +17,7 @@ export default ({ data }) => {
             <Image
                 style={{ cursor: "pointer", width: "40px", marginRight: "10px" }}
                 src="../images/info.svg"
+                title="További információk"
                 onClick={() => setLgShow(true)}
             />
             <Modal
@@ -86,7 +87,7 @@ export default ({ data }) => {
                         borderTop: "none",
                     }}
                 >
-                    {isLogged ? <Image style={{ cursor: "pointer", width: "40px" }} src="../images/cart.svg" /> : ""}
+                    {isLogged ? <Image style={{ cursor: "pointer", width: "40px" }} src="../images/cart.svg" title="Kosár" /> : ""}
                 </Modal.Footer>
             </Modal>
 
