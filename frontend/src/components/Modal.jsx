@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Modal, Image, Container, Row, Col } from "react-bootstrap";
 import ReactPlayer from "react-player";
 
-export default () => {
+export default ({ data }) => {
     const [lgShow, setLgShow] = useState(false);
 
     const [isLogged, setIsLogged] = useState(false);
@@ -34,7 +34,7 @@ export default () => {
                     }}
                     className="custom-modal-header"
                 >
-                    <Modal.Title id="modalTitle">Fortnite</Modal.Title>
+                    <Modal.Title id="modalTitle">{data.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body
                     style={{
@@ -49,7 +49,7 @@ export default () => {
                 >
                     <div style={{ width: "100%" }}>
                         <ReactPlayer
-                            url="https://www.youtube.com/watch?v=lioPzgWttWQ"
+                            url={data.link}
                             playing={false}
                             controls={true}
                             loop={false}
@@ -62,17 +62,17 @@ export default () => {
                         <Row>
                             <Col xs={12}>
                                 <h2 className="mt-3">Tudnivalók</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nemo iste eius. Incidunt repellendus atque illo. Aperiam harum sint sequi commodi distinctio, quis odit consequatur deleniti adipisci quasi qui dolorum officiis. Quam, odio. Cupiditate ullam provident, sint dicta unde quod maiores molestias, et nisi architecto eius. Rerum architecto quam qui id eum est neque, dolorum eos fuga dolores ipsa assumenda, reiciendis dolorem blanditiis corrupti alias! Corporis voluptate non aspernatur illo voluptatem amet quaerat beatae! Vel, rem dolores, nihil alias quisquam, non deserunt accusamus labore autem officia repellat voluptates atque culpa nesciunt ducimus mollitia? Nihil, molestiae nobis aliquam vitae praesentium fuga!</p>
+                                <p>{data.long_description}</p>
                             </Col>
                         </Row>
                         <Row>
                             <Col xs={12} md={6}>
                                 <h3>Rendszerkövetelmények</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quibusdam ullam iste quaerat id maiores alias pariatur necessitatibus mollitia tenetur sit deserunt et, optio neque illum ex accusamus minus nesciunt itaque quos vel, illo repellat! Ratione delectus sit exercitationem qui neque repellat, aperiam ex dolorum non distinctio vel, quas ullam!</p>
+                                <p>{data.system_requirements}</p>
                             </Col>
                             <Col xs={12} md={6}>
                                 <h3>Gyártó</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit molestias dolores debitis mollitia omnis, in voluptas expedita aperiam voluptatem accusamus.</p>
+                                <p>{data.company}</p>
                             </Col>
                         </Row>
                     </Container>
