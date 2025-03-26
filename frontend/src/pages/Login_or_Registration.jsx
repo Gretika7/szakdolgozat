@@ -52,11 +52,13 @@ export default () => {
     const handleLogin = async (e)=>{
         e.preventDefault();
         setError(null);
+        const token = localStorage.getItem("token");
         try{
             const response = await fetch("http://localhost:5000/login",{
                 method: "POST",
                 headers:{
                     "Content-Type":"application/json",
+                    "Authorization": `Bearer ${token}`
                 },
                 body:JSON.stringify({
                     "username": logUsername,
@@ -68,7 +70,8 @@ export default () => {
                 setError(data.message);
                 return;
             }
-            alert("Sikeres bejelentkezés!");
+            else {
+                alert("Sikeres bejelentkezés!");
             const token = data.token;
             if (!token) {
                 alert("Hiba!");
@@ -78,6 +81,8 @@ export default () => {
                 navigate("/");
                 window.location.reload();
             }                
+            }
+            
         }catch(err){
             setError("Valami hiba történt a bejelentkezés sortán!");
         }

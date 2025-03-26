@@ -22,7 +22,7 @@ const pool = mysql.createPool({
 
 app.get("/games", async(req, res) => {
     try {
-        const [games] = await pool.query("SELECT * FROM games;");
+        const [games] = await pool.query("SELECT * FROM games");
         res.json(games);
     } catch (err) {
         console.error(err);
@@ -135,10 +135,10 @@ app.get("/user", async (req, res) =>{
     try {
         const token = req.headers.authorization.split(' ')[1];
         if(!token) {
-            //ghkjk
+            res.status(403).json({message: "Nem vagy bejelentkezve!"});
         }
         const payload = jwt.verify(token, process.env.JWT_SECRET);
-        const [loginUser] = await pool.query("SELECT username, email FROM users");
+        const [loginUser] = await pool.query("SELECT username, email FROM users WHERE id=?", [payload._id]);
         if(loginUser.length < 1){
             res.status(500).json({message: "Nincs ilyen felhsználó!"});
         }
@@ -186,14 +186,15 @@ app.post("/login", async (req, res) => {
         if (!validPassword) {
             throw new Error("Érvénytelen hitelesítő adatok.");
         }
-
-        const Token = jwt.sign(
-            { _id: user[0].id },
-            "secret",
-            {}
-        );
-
-        res.json({ token: Token });
+        else {
+            const Token = jwt.sign(
+                { _id: user[0].id },
+                process.env.JWT_SECRET,
+                { expiresIn: "1h"}
+            );
+    
+            res.json({ token: Token });
+        }
     } catch (err) {
         console.error(err);
         if (err.message.includes("Érvénytelen!")) {
