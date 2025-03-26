@@ -44,6 +44,7 @@ export default () => {
                 className={`yingyang-icon ${isYingYangClicked ? 'active' : ''}`}
                 style={{ cursor: "pointer", width: "40px", marginRight: "10px", marginLeft: "10px" }}
                 src="../images/yingyang.svg"
+                title="Téma váltás"
                 onClick={handleYingYangClick}
             />
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{borderColor:"white" }}></Navbar.Toggle>

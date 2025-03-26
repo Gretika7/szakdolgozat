@@ -17,7 +17,7 @@ export default ({ data }) => {
             <Card.Body>
                 <Card.Title className='title'>{data.title}</Card.Title>
                 <Card.Text>{data.short_description}</Card.Text>
-                {isLogged ? <Image style={{cursor:"pointer", width:"40px", marginRight:"10px"}} src ="../images/cart.svg" ></Image>: ""}
+                {isLogged ? <Image style={{cursor:"pointer", width:"40px", marginRight:"10px"}} src ="../images/cart.svg" title="Kosár" ></Image>: ""}
                 <Modal data={data}></Modal>
             </Card.Body>
         </Card>

@@ -63,7 +63,7 @@ app.post("/cart", async(req, res) => {
 app.put("/update", async(req, res) => {
 try {
     const body = req.body;
-    const [update] = await pool.query("UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?", [body.username, body.email, body.password, body.id]);
+    const [update] = await pool.query("UPDATE users SET username = ?, email = ? WHERE id = ?", [body.username, body.email, body.id]);
     if(update.affectedRows < 1){
         res.status(500).json({message: "Sikertelen módosítás!"});
     }
