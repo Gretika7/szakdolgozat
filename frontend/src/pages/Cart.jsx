@@ -2,8 +2,8 @@ import { Container, Col, Row, Table, Button } from 'react-bootstrap';
 
 export default () => {
     return (
-        <Container fluid className="text-center">
-            <Row>
+        <Container className="text-center">
+            <Row className='mb-5'>
                 <h1 className="mb-3 mt-3">Kosaram</h1>
                 <Col xs={12} md={8}>
                     <Table striped bordered hover variant="light">

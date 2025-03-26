@@ -1,39 +1,23 @@
-import { Container, Row, Col, Card, Image} from "react-bootstrap";
+import { Container, Col, Row, Table, Button } from 'react-bootstrap';
 
 export default () => {
     return (
-        <Container className="text-center" style={{color: "white"}}>
-            <h1 className="mb-3 mt-3">Játékaim</h1>
-            <Row>
-                <Col xs={12} md={4}>
-                    <h2>Játék neve</h2>
-                    <ul style={{textAlign: "left"}}>
-                        <li>Játék</li>
-                        <li>Játék</li>
-                        <li>Játék</li>
-                        <li>Játék</li>
-                        <li>Játék</li>
-                    </ul>
-                </Col>
-                <Col xs={12} md={4}>
-                    <h2>Vásárlás dátuma</h2>
-                    <ul style={{textAlign: "left"}}>
-                        <li>Vásárlás dátuma</li>
-                        <li>Vásárlás dátuma</li>
-                        <li>Vásárlás dátuma</li>
-                        <li>Vásárlás dátuma</li>
-                        <li>Vásárlás dátuma</li>
-                    </ul>
-                </Col>
-                <Col xs={12} md={4}>
-                    <h2>Ár</h2>
-                    <ul style={{textAlign: "left"}}>
-                        <li>Ára</li>
-                        <li>Ára</li>
-                        <li>Ára</li>
-                        <li>Ára</li>
-                        <li>Ára</li>
-                    </ul>
+        <Container className="text-center">
+            <Row className='mb-5'>
+                <h1 className="mb-3 mt-3">Játékaim</h1>
+                <Col xs={12} md={12}>
+                    <Table striped bordered hover variant="light">
+                        <thead>
+                            <tr>
+                                <th>Játék neve</th>
+                                <th>Ár</th>
+                                <th>Vásárlás dátuma</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </Table>
                 </Col>
             </Row>
         </Container>
