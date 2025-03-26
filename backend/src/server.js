@@ -60,7 +60,7 @@ app.post("/cart", async(req, res) => {
     }
 });
 
-app.put("/update", async(req, res) => {
+app.put("/user", async(req, res) => {
 try {
     const body = req.body;
     const [update] = await pool.query("UPDATE users SET username = ?, email = ? WHERE id = ?", [body.username, body.email, body.id]);
@@ -128,6 +128,18 @@ app.post("/register", async (req, res) =>{
         res.status(500).json({
             message: "valami hiba történt!"
         });
+    }
+});
+
+app.get("/user", async (req, res) =>{
+    try {
+        const loginUser = await pool.query("SELECT username, email FROM users ;");
+        if(loginUser.length < 1){
+            res.status(500).json({message: "Nincs ilyen felhsználó!"});
+        }
+        res.status(200).json(loginUser);
+    } catch (error) {
+        
     }
 });
 
