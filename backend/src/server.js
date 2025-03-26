@@ -133,7 +133,7 @@ app.post("/register", async (req, res) =>{
 
 app.get("/user", async (req, res) =>{
     try {
-        const loginUser = await pool.query("SELECT username, email FROM users ;");
+        const [loginUser] = await pool.query("SELECT username, email FROM users ;");
         if(loginUser.length < 1){
             res.status(500).json({message: "Nincs ilyen felhsználó!"});
         }
