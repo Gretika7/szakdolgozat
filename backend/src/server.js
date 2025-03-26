@@ -133,13 +133,18 @@ app.post("/register", async (req, res) =>{
 
 app.get("/user", async (req, res) =>{
     try {
-        const [loginUser] = await pool.query("SELECT username, email FROM users ;");
+        const token = req.headers.authorization.split(' ')[1];
+        if(!token) {
+            //ghkjk
+        }
+        const payload = jwt.verify(token, process.env.JWT_SECRET);
+        const [loginUser] = await pool.query("SELECT username, email FROM users");
         if(loginUser.length < 1){
             res.status(500).json({message: "Nincs ilyen felhsználó!"});
         }
-        res.status(200).json(loginUser);
+        res.status(200).json(loginUser[0]);
     } catch (error) {
-        
+        console.log({message: error.message});
     }
 });
 
