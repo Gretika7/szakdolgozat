@@ -1,4 +1,4 @@
-import { Container, Col, Row, Table, Button } from 'react-bootstrap';
+import { Container, Col, Row, Table, Image } from 'react-bootstrap';
 
 export default () => {
     return (
@@ -15,9 +15,23 @@ export default () => {
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <tr>
+                                <td>Fortnite</td>
+                                <td>8000 Ft</td>
+                                <td>2025. 03. 29.</td>
+                            </tr>
+                            <tr>
+                                <td>GTA 5</td>
+                                <td>15000 Ft</td>
+                                <td>2025. 03. 29.</td>
+                            </tr>
                         </tbody>
                     </Table>
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={12} md={12} className="text-center">
+                    <Image src="../images/gamer.png" fluid className="mt-2 mb-5"></Image>
                 </Col>
             </Row>
         </Container>

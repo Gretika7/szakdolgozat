@@ -183,8 +183,8 @@ export default () => {
                         >
                             X
                         </button>
-                        <h2>Fiókom</h2>
-                        <h4 className="mt-4">Felhasználónév</h4>
+                        <h2 className="mt-4">Fiókom</h2>
+                        <h4 className="mt-5">Felhasználónév</h4>
                         {isEditing ? (
                             <input
                                 type="text"
@@ -194,9 +194,9 @@ export default () => {
                                 className="form-control"
                             />
                         ) : (
-                            <p>{userData.username}</p>
+                            <p>Teszt Elek{userData.username}</p>
                         )}
-                        <h4>E-mail cím</h4>
+                        <h4 className="mt-3">E-mail cím</h4>
                         {isEditing ? (
                             <input
                                 type="email"
@@ -206,7 +206,7 @@ export default () => {
                                 className="form-control"
                             />
                         ) : (
-                            <p>{userData.email}</p>
+                            <p>tesztelek@gmail.com{userData.email}</p>
                         )}
                          <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
                             {isEditing ? (
