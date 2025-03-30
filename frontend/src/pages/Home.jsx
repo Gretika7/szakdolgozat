@@ -1,4 +1,4 @@
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Card from "../components/Card";
 import ChangeCard from "../components/ChangeCard";
 import ChangeImage from "../components/ChangeImage";
@@ -15,7 +15,7 @@ export default () => {
                     }
                 });
                 if(!response.ok){
-                    throw new Error("Failed to fetch games");
+                    throw new Error("Nem sikerült a játékokat leszedni!");
                 }
                 const jsonData = await response.json();
                 setData(jsonData);
@@ -27,6 +27,21 @@ export default () => {
         fetchCard();
     }, []);
 
+    function addToCart(product) {
+        console.log(`${JSON.stringify(product)} added to cart`);
+        const cart = JSON.parse(localStorage.getItem("cart"));
+        if (!cart) {
+            localStorage.setItem("cart", JSON.stringify([product.id]));
+            alert(`${product.title} hozzáadva a kosárhoz!`);
+        } else if (!cart.includes(product.id)) {
+            console.log(cart);
+            cart.push(product.id);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${product.title} hozzáadva a kosárhoz!`);
+        } else {
+            alert(`Ez a termék már a kosárban van!`);
+        }
+    }
 
     return (
         <Container>
@@ -39,7 +54,7 @@ export default () => {
             <Row className="mt-4 mb-4">
                 {data && data.map((item, index) => (
                     <Col key={index} xs={12} md={3}>
-                        <Card data={item} />
+                        <Card data={item} addToCart={() => addToCart(item)}/>
                     </Col>
                 ))}
             </Row>

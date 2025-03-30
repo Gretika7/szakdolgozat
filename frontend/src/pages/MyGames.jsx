@@ -1,6 +1,35 @@
+import { useEffect, useState } from "react";
 import { Container, Col, Row, Table, Image } from 'react-bootstrap';
 
 export default () => {
+    const [games, setGames] = useState([]);
+
+    useEffect(()=>{
+        const fetchGames = async () =>{
+            try {
+                const response =  await fetch("http://localhost:5000/my-games",{
+                    headers:{
+                        "Content-Type":"application/json",
+                        "Authorization": `Bearer ${localStorage.getItem("token")}`,
+                    }
+                });
+
+                if(!response.ok){
+                    throw new Error("Failed to fetch games");
+                }
+
+                const jsonData = await response.json();
+                console.log(jsonData);
+
+                setGames(jsonData.games);
+            }catch(err){
+                console.error(err);
+                alert(err.message);
+            }
+        };
+        fetchGames();
+    }, []);
+
     return (
         <Container className="text-center">
             <Row className='mb-5'>
@@ -15,16 +44,16 @@ export default () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Fortnite</td>
-                                <td>8000 Ft</td>
-                                <td>2025. 03. 29.</td>
-                            </tr>
-                            <tr>
-                                <td>GTA 5</td>
-                                <td>15000 Ft</td>
-                                <td>2025. 03. 29.</td>
-                            </tr>
+                            {games.map((game, index) => {
+                                console.log(games);
+                                return (
+                                    <tr key={index}>
+                                        <td>{game.title}</td>
+                                        <td>{game.price} Ft</td>
+                                        <td>{game.purchase_date}</td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </Table>
                 </Col>
