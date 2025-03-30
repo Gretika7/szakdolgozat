@@ -88,14 +88,17 @@ export default () => {
                 console.error("No token found for update");
                 return;
             }
+            const userId = userData.id;
             const response = await fetch("http://localhost:5000/user",{
                 method:"PUT",
                 headers: {
                     "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify({
                     username: newUsername,
-                    email: newEmail
+                    email: newEmail,
+                    id: userId,
                 }),
             });
             if(!response.ok) {
@@ -194,7 +197,7 @@ export default () => {
                                 className="form-control"
                             />
                         ) : (
-                            <p>Teszt Elek{userData.username}</p>
+                            <p>{userData.username}</p>
                         )}
                         <h4 className="mt-3">E-mail cím</h4>
                         {isEditing ? (
@@ -206,7 +209,7 @@ export default () => {
                                 className="form-control"
                             />
                         ) : (
-                            <p>tesztelek@gmail.com{userData.email}</p>
+                            <p>{userData.email}</p>
                         )}
                          <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
                             {isEditing ? (
