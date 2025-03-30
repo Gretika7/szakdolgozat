@@ -88,14 +88,17 @@ export default () => {
                 console.error("No token found for update");
                 return;
             }
+            const userId = userData.id;
             const response = await fetch("http://localhost:5000/user",{
                 method:"PUT",
                 headers: {
                     "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify({
                     username: newUsername,
-                    email: newEmail
+                    email: newEmail,
+                    id: userId,
                 }),
             });
             if(!response.ok) {
@@ -183,8 +186,8 @@ export default () => {
                         >
                             X
                         </button>
-                        <h2>Fiókom</h2>
-                        <h4 className="mt-4">Felhasználónév</h4>
+                        <h2 className="mt-4">Fiókom</h2>
+                        <h4 className="mt-5">Felhasználónév</h4>
                         {isEditing ? (
                             <input
                                 type="text"
@@ -196,7 +199,7 @@ export default () => {
                         ) : (
                             <p>{userData.username}</p>
                         )}
-                        <h4>E-mail cím</h4>
+                        <h4 className="mt-3">E-mail cím</h4>
                         {isEditing ? (
                             <input
                                 type="email"

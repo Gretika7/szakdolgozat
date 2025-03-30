@@ -17,7 +17,7 @@ export default () => {
             <Row className="mb-5">
                 <h2 className="mb-4">Fejlesztői csapat és konzulens</h2>
                 <Col xs={12} md={4}>
-                    <Card className='mt-4 mb-4' style={{backgroundColor:"#3e2246" , color:"white",textAlign:"center"}}>
+                    <Card className='mt-4 mb-4' style={{backgroundColor:"#3e2246" , color:"white",textAlign:"center", height: "300px"}}>
                         <Card.Body>
                             <Card.Title className='title'>Kerti Benjámin</Card.Title>
                             <Card.Text>Ő volt a Backend és Adatbázis fejlesztője és kivitelezője. Ő hozzá fűzödik az adatmodellünk és a szerver létrejötte.</Card.Text>
@@ -27,7 +27,7 @@ export default () => {
                 </Col>
 
                 <Col xs={12} md={4}>
-                    <Card className='mt-4 mb-4' style={{backgroundColor:"#3e2246" , color:"white",textAlign:"center"}}>
+                    <Card className='mt-4 mb-4' style={{backgroundColor:"#3e2246" , color:"white",textAlign:"center", height: "300px"}}>
                         <Card.Body>
                             <Card.Title className='title'>Házi Gréti</Card.Title>
                             <Card.Text>Ő volt a Frontend fejlesztője, a felhasználói felület és felhasználói élmény tervezője, kivitelezője. Hozzá fűződik a projekt címe és tematikája.</Card.Text>
@@ -37,7 +37,7 @@ export default () => {
                 </Col>
 
                 <Col xs={12} md={4}>
-                    <Card className='mt-4 mb-4' style={{backgroundColor:"#3e2246" , color:"white",textAlign:"center"}}>
+                    <Card className='mt-4 mb-4' style={{backgroundColor:"#3e2246" , color:"white",textAlign:"center", height: "300px"}}>
                         <Card.Body>
                             <Card.Title className='title'>Molnár Máté Norbert</Card.Title>
                             <Card.Text>A projekt során Ő volt a konzulensünk, aki végigkövette a folyamatokat.</Card.Text>

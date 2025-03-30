@@ -91,9 +91,9 @@ export default () => {
         <Container fluid>
             <Row>
                 <Col xs={12} md={6} className="rajta pt-5 pb-5" style={{ paddingBottom: "100px" }}>
-                    <h2 className="text-center pt-5 mt-4 mb-4 pb-5">Bejelentkezés</h2>
+                    <h2 className="text-center pt-5 mt-5 mb-4 pb-5">Bejelentkezés</h2>
                     <Form onSubmit={handleLogin}>
-                        <FloatingLabel label="Felhasználónév" className="mb-3 text">
+                        <FloatingLabel label="Felhasználónév" className="mt-5 mb-4 text">
                             <Form.Control id="loginUsername" className="input" type="text" placeholder="Felhasználónév" value={logUsername} onChange={(e) => setLogUsername(e.target.value)}/>
                         </FloatingLabel>
                         <FloatingLabel className="text" label="Jelszó">
@@ -103,12 +103,12 @@ export default () => {
                     </Form>
                 </Col>
                 <Col xs={12} md={6} className="rajta pt-5 pb-5" style={{ paddingBottom: "100px" }}>
-                    <h2 className="text-center pt-5 mt-4 mb-4 pb-5">Regisztráció</h2>
+                    <h2 className="text-center pt-5 mt-5 mb-4 pb-5">Regisztráció</h2>
                     <Form onSubmit={handleRegister}>
-                        <FloatingLabel label="Felhasználónév" className="mb-3 text">
+                        <FloatingLabel label="Felhasználónév" className="mt-5 mb-4 text">
                             <Form.Control id="registrationUsername" className="input" type="text" placeholder="Felhasználónév" value={regUsername} onChange={(e) => setRegUsername(e.target.value)}/>
                         </FloatingLabel>
-                        <FloatingLabel label="Email-cím" className="mb-3 text">
+                        <FloatingLabel label="Email-cím" className="mb-4 text">
                             <Form.Control id="registrationEmail" className="input" type="email" placeholder="Email-cím" value={regEmail} onChange={(e) => setRegEmail(e.target.value)}/>
                         </FloatingLabel>
                         <Row>

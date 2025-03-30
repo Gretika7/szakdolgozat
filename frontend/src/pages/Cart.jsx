@@ -1,4 +1,4 @@
-import { Container, Col, Row, Table, Button } from 'react-bootstrap';
+import { Container, Col, Row, Table, Button, Image } from 'react-bootstrap';
 
 export default () => {
     return (
@@ -14,13 +14,25 @@ export default () => {
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <tr>
+                                <td>Fortnite</td>
+                                <td>8000 Ft</td>
+                            </tr>
+                            <tr>
+                                <td>GTA 5</td>
+                                <td>15000 Ft</td>
+                            </tr>
                         </tbody>
                     </Table>
                 </Col>
                 <Col xs={12} md={4}>
-                    <h2>Összesen: </h2>
-                    <Button variant='light'>Vásárlás</Button>
+                    <h2>Összesen: 23000 Ft</h2>
+                    <Button variant='light' className='mt-4'>Vásárlás</Button>
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={12} md={12} className="text-center">
+                    <Image src="../images/gamer.png" fluid className="mt-2 mb-5"></Image>
                 </Col>
             </Row>
         </Container>
