@@ -5,13 +5,6 @@ import ReactPlayer from "react-player";
 export default ({ data }) => {
     const [lgShow, setLgShow] = useState(false);
 
-    const [isLogged, setIsLogged] = useState(false);
-
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        setIsLogged(!!token);
-    }, []);
-
     return (
         <>
             <Image
@@ -87,7 +80,6 @@ export default ({ data }) => {
                         borderTop: "none",
                     }}
                 >
-                    {isLogged ? <Image style={{ cursor: "pointer", width: "40px" }} src="../images/cart.svg" title="Kosár" /> : ""}
                 </Modal.Footer>
             </Modal>
 
