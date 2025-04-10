@@ -84,7 +84,7 @@ export default () => {
             }
             
         }catch(err){
-            setError("Valami hiba történt a bejelentkezés sortán!");
+            setError("Valami hiba történt a bejelentkezés során!");
         }
     }
     return (

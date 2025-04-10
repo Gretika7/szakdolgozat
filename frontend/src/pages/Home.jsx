@@ -29,7 +29,7 @@ export default () => {
     }, []);
 
     function addToCart(product) {
-        console.log(`${JSON.stringify(product)} added to cart`);
+        console.log(`${JSON.stringify(product)} hozzáadva a kosárhoz!`);
         const cart = JSON.parse(localStorage.getItem("cart"));
         if (!cart) {
             localStorage.setItem("cart", JSON.stringify([product.id]));

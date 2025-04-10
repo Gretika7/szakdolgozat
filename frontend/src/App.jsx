@@ -25,8 +25,6 @@ export default () => {
                 <Route path="/mycart" element={<Cart></Cart>}></Route>
                 <Route path="/login-or-registration" element={<Login_or_Registration></Login_or_Registration>}></Route>
                 <Route path="/mygames" element={<MyGames></MyGames>}></Route>
-
-                {/*Ide a többi oldalt*/}
                 <Route path="*" element={<NotFound></NotFound>}></Route>
             </Routes>
             <Footer></Footer>

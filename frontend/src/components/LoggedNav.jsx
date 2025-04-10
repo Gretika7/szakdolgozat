@@ -35,7 +35,7 @@ export default () => {
                         localStorage.removeItem("token");
                         navigate("/login");
                     }
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error(`HTTP hiba! státusz: ${response.status}`);
                 }
                 const data = await response.json();
                 if(data && data.username && data.email) {
@@ -85,7 +85,7 @@ export default () => {
         try {
             const token = localStorage.getItem("token");
             if(!token) {
-                console.error("No token found for update");
+                console.error("Nem talált tokent a frissítéshez!");
                 return;
             }
             const userId = userData.id;
@@ -107,7 +107,7 @@ export default () => {
                     navigate("/login");
                 }
                 const errorData = await response.json();
-                throw new Error(`HTTP error! status: ${response.status} message: ${errorData.message}`);
+                throw new Error(`HTTP hiba! státusz: ${response.status} üzenet: ${errorData.message}`);
             }
 
             const updatedUserData = await response.json();

@@ -22,7 +22,7 @@ export default () => {
                 });
 
                 if(!response.ok){
-                    throw new Error("Failed to fetch games");
+                    throw new Error("Hiba a játékok betöltésekor.");
                 }
 
                 const jsonData = await response.json();
@@ -95,7 +95,7 @@ export default () => {
             });
 
             if(!response.ok){
-                throw new Error("Failed to place order");
+                throw new Error("Hiba a rendelés leadásakor.");
             }
 
             const jsonData = await response.json();

@@ -15,7 +15,7 @@ export default () => {
                 });
 
                 if(!response.ok){
-                    throw new Error("Failed to fetch games");
+                    throw new Error("Hiba a játékok betöltésekor!");
                 }
 
                 const jsonData = await response.json();
