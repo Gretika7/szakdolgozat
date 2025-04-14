@@ -68,8 +68,9 @@ try {
         res.status(500).json({message: "Sikertelen módosítás!"});
     }
     res.status(201).json({message: "Sikeres módosítás!"});
-} catch (error) {
-    
+} catch (err) {
+    console.error(err);
+    res.status(500).json({message: "Valami hiba történt."});
 }
 });
 
